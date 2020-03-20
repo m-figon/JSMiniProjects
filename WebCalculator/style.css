@@ -1,0 +1,51 @@
+body{
+    background-color: #d9d9d9;
+    font-family: 'PT Sans', sans-serif;
+    color: #fc9003;
+}
+.app{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.welcome-sign,
+.display{
+    margin: 4.5rem 0;
+    padding: 0.55rem 0;
+    width:20%;
+}
+.display,
+.operation-buttons{
+    margin: 2.5rem 0;
+    background-color:#f2f2f2;
+    border-radius: 10px;
+    width:20%;
+}
+.display{
+    width:10%;
+}
+.operation-buttons{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    padding: 1.25rem 1.25rem;
+    
+}
+button:disabled{
+    background-color: #b0b0b0;
+}
+h1{
+    font-size: 1.75rem;
+    text-align: center;
+}
+button{
+    background-color:  #fc9003;
+    font-family: 'PT Sans', sans-serif;
+    color:#f2f2f2;
+    font-size: 1.88rem;
+    
+}
+button:hover{
+    cursor: pointer;
+}
