@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8"/>
+      <link rel="stylesheet" href="style.css" />
+      <title>Register</title>
+    </head>
+    <body>
+            <div class="app">
+            <div class="app-form">
+            <form id="form">
+                <h1>e-mail adress</h1><input id="email" type="text" value=""/><div id="tooltip1">Please enter correct email adress</div>
+                <h1>account name</h1><input id="ac-name" type="text" value=""/><div id="tooltip4">Username must consist of 4-10 characters which are either digits, letters or -_.</div>
+                <h1>password</h1><input id="password" type="text" value=""/><div id="tooltip2">Password must consist of 8-13 letters, cointain: one upper and lower case letter, one digit, one special character</div>
+                <h1>confirm password</h1><input id="confirm-password" type="text" value=""/><div id="tooltip3">This field must match your password</div>
+                <h1>country</h1>
+                <select id="country">
+                  <option value="none"></option>
+                  <option value="poland">Poland</option>
+                  <option value="unitedstates">United States</option>
+                  <option value="france">France</option>
+                  <option value="germany">Germany</option>
+                  <option value="russia">Russia</option>
+                  <option value="sweden">Sweden</option>
+                  <option value="norway">Norway</option>
+                </select>
+                <h1>date of birth</h1>
+                <select id="day">
+                  <option value="none">Day</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                </select>
+                <select id="month">
+                  <option value="none">Month</option>
+                  <option value="jan">Jan</option>
+                  <option value="feb">Feb</option>
+                  <option value="march">March</option>
+                  <option value="april">April</option>
+                  <option value="may">May</option>
+                  <option value="june">June</option>
+                  <option value="july">July</option>
+                </select>
+                <select id="year">
+                  <option value="none">Year</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                </select>
+              </form>
+            <button>Register</button>
+            </div>
+            </div>
+      <script src="App.js"></script>
+    </body>
+</html>
