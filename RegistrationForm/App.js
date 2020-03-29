@@ -1,3 +1,4 @@
+
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const confirmpassword = document.querySelector('#confirm-password');
@@ -60,7 +61,19 @@ function tooltipReactionInit(){
         })
     }
 }
+function addOptions(element,value){
+    let option = document.createElement("option");
+    option.value=value;
+    let text = document.createTextNode(value);
+    option.appendChild(text);
+    element.appendChild(option);
+}
 buttonListenerInit();
 tooltipReactionInit()
-
+for(let i=1; i<32; i++){
+    addOptions(day,i);
+}
+for(let i=2020; i>1919; i--){
+    addOptions(year,i);
+}
 
