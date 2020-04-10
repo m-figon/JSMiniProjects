@@ -33,6 +33,13 @@ body{
     width:20vw;
     height: 50vh;
 }
+
+@keyframes mymove {
+    0%    {transform: rotateZ(0deg);}
+    100%   {transform: rotateZ(360deg);}
+}
+
+  
 .unit h1{
     display: flex;
     justify-content: center;
