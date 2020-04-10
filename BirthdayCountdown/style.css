@@ -1,5 +1,5 @@
 body{
-    background-color: #d9d9d9;
+    background: url("https://www.pixel4k.com/wp-content/uploads/2018/09/starry-sky-stars-space-4k_1536013813.jpg");
     font-family: 'PT Sans', sans-serif;
     color: #fc9003;
 }
@@ -30,7 +30,6 @@ body{
     width: 100vw;
 }
 .unit{
-    border: 1px black solid;
     width:20vw;
     height: 50vh;
 }
