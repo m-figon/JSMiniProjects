@@ -11,9 +11,34 @@ body{
     height: 100vh;
     width: 100vw;
 }
+img{
+    height:30vh;
+    width: 20vw;
+}
+button{
+    margin: 2rem 0;
+    background-color: #cc6aa6;
+    color:white;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.2rem;
+    border: 1.5px solid white;
+    border-radius: 5px;
+}
+input{
+    padding: 0.2rem 0.2rem;
+    font-family: 'PT Sans', sans-serif;
+    height:1.5rem;
+    width:11%;
+    color: #383838;
+    border: 2px solid #cc6aa6;
+
+    font-size: 1.2rem;
+    border-radius: 7px;
+}
 .title{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 60vh;
     width: 100vw;
