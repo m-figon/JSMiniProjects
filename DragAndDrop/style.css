@@ -1,0 +1,58 @@
+body{
+    background-color: #afafaf;
+    font-family: 'PT Sans', sans-serif;
+    color: green;
+    
+}
+.bottom
+{
+     grid-area: bottom;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.left
+{
+     grid-area: left;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.middle
+{
+     grid-area: middle; 
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.right
+{
+     grid-area: right; 
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.app{
+    display: grid;
+    width:98.8vw;
+    height:98.3vh;
+    grid-template-areas:
+    'left left middle middle right right'
+    'left left middle middle right right'
+    'left left middle middle right right'
+    'bottom bottom bottom bottom bottom bottom'
+    'bottom bottom bottom bottom bottom bottom';
+}
+.field{
+    width:80%;
+    height:80%;
+    background-color: white;
+    border-radius: 10px;
+    border: 5px solid black
+}
+
+img{
+    position: relative;
+    widows:7vw;
+    height:7vw;
+}

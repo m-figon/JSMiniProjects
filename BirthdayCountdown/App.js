@@ -33,7 +33,7 @@ const displaySurprise = () => {
     tooltip.appendChild(h2);
     image.src = "http://www.pngall.com/wp-content/uploads/2016/07/Birthday-Present-PNG-Pic.png"
     image.addEventListener('click', () => {
-        app.removeChild(app.firstElementChild);
+        console.log("Click!");
     })
     title.appendChild(image);
     title.appendChild(tooltip);
