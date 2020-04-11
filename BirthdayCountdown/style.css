@@ -15,23 +15,39 @@ img{
     height:30vh;
     width: 20vw;
 }
+img:hover,
+button:hover
+{
+    cursor: pointer;
+}
+#tooltip{
+    background: white;
+    color: #cc6aa6;
+    font-size: 1rem;
+    margin-top: -30vh;
+    margin-left: 17vw;
+    padding: 5px 5px;
+    border-radius: 50%;
+    border: 1.5px #cc6aa6 solid;
+}
 button{
     margin: 2rem 0;
-    background-color: #cc6aa6;
+    background: url("https://www.pixel4k.com/wp-content/uploads/2018/09/starry-sky-stars-space-4k_1536013813.jpg");
     color:white;
     font-family: 'PT Sans', sans-serif;
     font-size: 1.2rem;
-    border: 1.5px solid white;
+    border: 1.5px solid #cc6aa6;
     border-radius: 5px;
 }
+
 input{
     padding: 0.2rem 0.2rem;
     font-family: 'PT Sans', sans-serif;
     height:1.5rem;
     width:11%;
-    color: #383838;
+    color: white;
     border: 2px solid #cc6aa6;
-
+    background: url("https://www.pixel4k.com/wp-content/uploads/2018/09/starry-sky-stars-space-4k_1536013813.jpg");
     font-size: 1.2rem;
     border-radius: 7px;
 }

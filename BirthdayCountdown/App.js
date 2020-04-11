@@ -2,13 +2,11 @@ const daysNumber = document.querySelector("#days");
 const hoursNumber = document.querySelector("#hours");
 const minutesNumber = document.querySelector("#minutes");
 const secondsNumber = document.querySelector("#seconds");
+
 const app = document.querySelector(".app");
 const title = document.querySelector(".title");
 const timer = document.querySelector(".timer");
-const unitDay = document.querySelector("#day");
-const unitHour = document.querySelector("#hour");
-const unitMinute = document.querySelector("#minute");
-const unitSecond = document.querySelector("#second");
+
 const button = document.querySelector("button");
 const input = document.querySelector("input");
 
@@ -24,17 +22,29 @@ var days, hours, minutes, seconds;
 var tmpDays, tmpHours, tmpMinutes, tmpSeconds, started;
 
 const displaySurprise = () => {
+
     app.removeChild(timer);
-    title.children[0].innerText = "Happy Birthday!";
-    var image = document.createElement("img");
+    title.firstElementChild.innerText = "Happy Birthday!";
+    const image = document.createElement("img");
+    const tooltip = document.createElement("div");
+    tooltip.id="tooltip";
+    const h2 = document.createElement("h2");
+    h2.textContent="Click me!"
+    tooltip.appendChild(h2);
     image.src = "http://www.pngall.com/wp-content/uploads/2016/07/Birthday-Present-PNG-Pic.png"
+    image.addEventListener('click', () => {
+        app.removeChild(app.firstElementChild);
+    })
     title.appendChild(image);
+    title.appendChild(tooltip);
+
 }
-function makeAnimation(condition1, condition2, value1, value2) {
+function makeAnimation(condition1, condition2, value) {
     if (condition1 !== condition2) {
-        value1.style.animation = "mymove 0.5s steps(50)";
-        value2.removeChild(value1);
-        value2.appendChild(value1);
+        const childElem = value.firstElementChild;
+        childElem.style.animation = "mymove 0.5s steps(50)";
+        value.removeChild(childElem);
+        value.appendChild(childElem);
     }
 }
 const checkAndPrintTime = () => {
@@ -49,39 +59,42 @@ const checkAndPrintTime = () => {
             minutes = Math.floor((birthdayDate.getTime() - currentDate.getTime() - (days * DAY) - (hours * HOUR)) / (MINUTE));
             seconds = Math.floor(((birthdayDate.getTime() - currentDate.getTime()) - (days * DAY) - (hours * HOUR) - (minutes * MINUTE)) / (SECOND));
 
-            makeAnimation(tmpMinutes, minutes, unitMinute, minutesNumber);
-            makeAnimation(tmpHours, hours, unitHour, hoursNumber);
-            makeAnimation(tmpDays, days, unitDay, daysNumber);
+            makeAnimation(tmpMinutes, minutes, minutesNumber);
+            makeAnimation(tmpHours, hours, hoursNumber);
+            makeAnimation(tmpDays, days, daysNumber);
 
             tmpDays = days;
             tmpHours = hours;
             tmpMinutes = minutes;
             tmpSeconds = seconds;
 
-            displayNumber(days, unitDay);
-            displayNumber(hours, unitHour);
-            displayNumber(minutes, unitMinute);
-            displayNumber(seconds, unitSecond);
+            displayNumber(days, daysNumber.firstElementChild);
+            displayNumber(hours, hoursNumber.firstElementChild);
+            displayNumber(minutes, minutesNumber.firstElementChild);
+            displayNumber(seconds, secondsNumber.firstElementChild);
         }
 
     } else {
         if (started) {
             displaySurprise();
-            setInterval("javascript function", milliseconds);
+            try {
+                setInterval("javascript function", milliseconds);
+            } catch (e) { }
+
         }
 
     }
 }
 app.removeChild(timer);
-title.children[0].innerText = "Please enter date e.g.'April 29, 2020 00:00:00'";
+title.firstElementChild.innerText = "Please enter date e.g.'April 29, 2020 00:00:00'";
 button.addEventListener("click", () => {
     birthdayDate = new Date(input.value);
-    title.children[0].innerText = "Birthday Timer";
+    title.firstElementChild.innerText = "Birthday Timer";
     app.appendChild(timer);
     input.style.display = "none";
     button.style.display = "none";
     started = true;
-    unitSecond.style.animation = "mymove 0.5s steps(50)";
+    secondsNumber.firstElementChild.style.animation = "mymove 0.5s steps(50)";
     checkAndPrintTime();
 })
 
