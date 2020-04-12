@@ -56,3 +56,9 @@ img{
     widows:7vw;
     height:7vw;
 }
+#soccer,
+#basket,
+#volley{
+    height:50vh;
+    width:25vw;
+}
