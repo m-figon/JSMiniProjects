@@ -52,7 +52,7 @@ body{
 }
 
 img{
-    position: relative;
+    position: absolute;
     widows:7vw;
     height:7vw;
 }
