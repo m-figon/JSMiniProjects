@@ -4,33 +4,29 @@ body{
     color: green;
     
 }
-.bottom
+.bottom,
+.left,
+.middle,
+.right
 {
-     grid-area: bottom;
      display: flex;
      justify-content: center;
      align-items: center;
+}
+.bottom{
+    grid-area: bottom;
 }
 .left
 {
      grid-area: left;
-     display: flex;
-     justify-content: center;
-     align-items: center;
 }
 .middle
 {
      grid-area: middle; 
-     display: flex;
-     justify-content: center;
-     align-items: center;
 }
 .right
 {
      grid-area: right; 
-     display: flex;
-     justify-content: center;
-     align-items: center;
 }
 .app{
     display: grid;
@@ -61,4 +57,17 @@ img{
 #volley{
     height:50vh;
     width:25vw;
+}
+.sign-div{
+    width:98vw;
+    height:98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-size: 6rem;
+}
+.bottom > .field > img:hover{
+    cursor: pointer;
 }
