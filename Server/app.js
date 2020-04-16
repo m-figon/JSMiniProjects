@@ -1,7 +1,9 @@
 const express = require('express');
+const cors = require('cors')
 const app = express();
 var data = require('./users');
 const jsonData = data;
+app.use(cors());
 
 app.get('/', (req, res, next) => {
     res.set('Content-Type', 'text/html');

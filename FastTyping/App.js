@@ -62,7 +62,7 @@ const main = (arrayValue) => {
 //init values
 
 
-fetch('https://jsonplaceholder.typicode.com/users')
+fetch('http://localhost:3000/data')
   .then((response) => {
     return response.json();
   })
