@@ -1,0 +1,38 @@
+[
+{
+    "id": 0,
+    "src": "https://www.filmawka.pl/wp-content/uploads/2020/02/unnamed-4.jpg",
+    "name": "Cóż za piękny dzień",
+    "type": "dramat",
+    "ageRestrictions": 15,
+    "duration": "109 min",
+    "trailer": "https://www.youtube.com/embed/Ume61g2qS-Y"
+},
+{
+    "id": 1,
+    "src": "https://i.pinimg.com/originals/df/0c/d1/df0cd12bd076b0728e14e618c79a606b.jpg",
+    "name": "Jojo Rabbit",
+    "type": "komedia",
+    "ageRestrictions": 15,
+    "duration": "108 min",
+    "trailer": "https://www.youtube.com/embed/tL4McUzXfFI"
+},
+{
+    "id": 2,
+    "src": "https://static.posters.cz/image/750/obrazy/onward-naprzod-guinevere-quest-i86385.jpg",
+    "name": "Naprzód",
+    "type": "animowany",
+    "ageRestrictions": 6,
+    "duration": "102 min",
+    "trailer": "https://www.youtube.com/embed/gn5QmllRCn4"
+},
+{
+    "id": 3,
+    "src": "https://sklep.gutekfilm.pl/uploads/parasite-plakatpl-lq.jpg",
+    "name": "Parasite",
+    "type": "dramat",
+    "ageRestrictions": 15,
+    "duration": "132 min",
+    "trailer": "https://www.youtube.com/embed/5xH0HfJHsaY"
+}
+]

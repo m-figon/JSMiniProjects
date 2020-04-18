@@ -1,0 +1,54 @@
+body{
+    font-family: 'Roboto', sans-serif;
+
+}
+.app{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+
+}
+.post{
+    width: 15rem;
+    height: 13rem;
+    background-color: #faad06;
+    margin-left: 1px;
+    margin-right: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+h2{
+    font-size: 1.1rem;
+}
+h1{
+    font-size: 1rem;
+}
+.form{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 13rem;
+}
+.form input{
+    margin-left: 4%;
+    border-radius: 7px;
+    border: 2px solid black;
+    height: 1.8rem;
+}
+button{
+    border-radius: 5px;
+    border: 2px solid black;
+    color: white;
+    background-color: #faad06;
+}
+.one-line{
+    margin-top: 10px;
+
+    display: flex;
+}

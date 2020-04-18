@@ -1,0 +1,31 @@
+[
+{
+    "id":0,
+    "adres": "al. Zwycięstwa 14 Gdańsk 80-219",
+    "info": "Multikino w Gdańsku zostało otwarte w listopadzie 2000 roku. Było to czwarte Multikino na mapie Polski. Multipleks jest zlokalizowany w sąsiedztwie Opery Bałtyckiej. Ma jeden poziom i jest przystosowany dla osób niepełnosprawnych oraz rodziców z małymi dziećmi (odosobnione miejsce z przewijakiem). Multikino ma 10 sal kinowych, które łącznie mogą pomieścić ponad 2 700 osób. Ponadto widzowie mogą liczyć na wyjątkowy komfort podczas oglądania filmów, dzięki wykonanym ze skóry ekologicznej fotelom VIP, które mają szersze podłokietniki z elementami drewna. Są one zlokalizowane w wybranej części każdej sali. Kino oferuje widzom zróżnicowany repertuar filmowy oraz cykliczne wydarzenia specjalne. Kasy biletowe są otwierane 15 minut przed pierwszym seansem, a zamykane 15 minut po starcie ostatniego seansu. Zastrzegamy sobie możliwość zmian w repertuarze. Kino oferuje możliwość wynajmu sal i organizacji eventów dla klientów korporacyjnych. Zapraszamy do rezerwowania biletów przez stronę internetową. W celu uzyskania dodatkowych informacji lub dokonania rezerwacji drogą telefoniczną zapraszamy do kontaktu z naszą infolinią.",
+    "contact":"E-mail: gdansk@multikino.pl, Infolinia dla klientów (7 dni w tygodniu w godz. 10:00 - 22:00): 54 23 03 631",
+    "prices": "https://media.multikino.pl/uploads/prices_pdf/20200311-180930/Gdansk.pdf"
+
+},
+{
+    "id":1,
+    "adres": "ul. Zgrupowania AK Kampinos 15 Warszawa 01-943",
+    "info": "Multikino Młociny jest kinem partnerskim zarządzanym przez Cinema 3D S.A. Wygoda, komfort i nowoczesny design to główne cechy charakteryzujące Multikino, mieszące się w Galerii Młociny. Obiekt składa się z 10 sal, posiadających łącznie 953 miejsc. Na każdej sali znajdują się 2 miejsca specjalnie wyznaczone dla osób niepełnosprawnych.",
+    "contact":"Email: warszawa2@cinema3d.pl Infolinia dla klientów (7 dni w tygodniu w godz. 10:00 - 22:00): 41 26 72 382",
+    "prices": "https://media.multikino.pl/uploads/prices_pdf/20200311-180930/Warszawa%20Mlociny.pdf"
+},
+{
+    "id":2,
+    "adres": "ul. Dobrego Pasterza 12 Kraków 30-962",
+    "info": "Multikino w Krakowie powstało w maju 2001 roku jako budynek wolnostojący. Kino wyposażone jest  12 sal projekcyjnych, które łącznie mogą pomieścić 2897 osób. Każda sala posiada wydzieloną strefę VIP – wygodne i luksusowe fotele zapewniające  najlepszą widoczność ekranu. W dwóch największych salach znajduje się 437 oraz 473 miejsc. Kino oferuje widzom zróżnicowany repertuar filmowy oraz cykliczne wydarzenia specjalne. Obiekt dostosowany jest do potrzeb osób niepełnosprawnych. Kasy biletowe są otwierane 15 minut przed pierwszym seansem, a zamykane 15 minut po starcie ostatniego seansu. Zastrzegamy sobie możliwość zmian w repertuarze. Kino oferuje możliwość wynajmu sal i organizacji eventów dla klientów korporacyjnych. Zapraszamy do rezerwowania biletów przez stronę internetową. W celu uzyskania dodatkowych informacji lub dokonania rezerwacji drogą telefoniczną zapraszamy do kontaktu z naszą infolinią.",
+    "contact":"E-mail: krakow@multikino.pl, Infolinia dla klientów (7 dni w tygodniu w godz. 10:00 - 22:00): 54 23 03 630",
+    "prices": "https://media.multikino.pl/uploads/prices_pdf/20200311-180930/Krakow.pdf"
+},
+{
+    "id":3,
+    "adres": "pl. Grunwaldzki 22 Wrocław 50-363",
+    "info": "Multikino Pasaż Grunwaldzki zostało otwarte w 2007 roku jako pierwsze kino sieci we Wrocławiu. Multipleks znajduje się na trzecim i czwartym poziomie Galerii Handlowej Pasaż Grunwaldzki. Obiekt liczy 11 sal kinowych, które zajmują łącznie ponad 3500 m² i mogą pomieścić ponad 2500 widzów. W największej sali jest ponad 500 foteli. Na wszystkich salach są specjalne strefy VIP. Przed seansem można skosztować kawy w kinowej kawiarni. Obiekt dostosowany jest do potrzeb osób niepełnosprawnych. Kasy biletowe są otwierane 15 minut przed pierwszym seansem, a zamykane 15 minut po starcie ostatniego seansu. Zastrzegamy sobie możliwość zmian w repertuarze. Kino oferuje możliwość wynajmu sal i organizacji eventów dla klientów korporacyjnych. Zapraszamy do rezerwowania biletów przez stronę internetową. W celu uzyskania dodatkowych informacji lub dokonania rezerwacji drogą telefoniczną zapraszamy do kontaktu z naszą infolinią.",
+    "contact":"E-mail: wroclawpasaz@multikino.pl Infolinia dla klientów (7 dni w tygodniu w godz. 10:00 - 22:00): 44 32 72 382",
+    "prices": "https://media.multikino.pl/uploads/prices_pdf/20200311-180930/Wroclaw%20Pasaz.pdf"
+}
+]
