@@ -26,11 +26,6 @@ const displaySurprise = () => {
     app.removeChild(timer);
     title.firstElementChild.innerText = "Happy Birthday!";
     const image = document.createElement("img");
-    const tooltip = document.createElement("div");
-    tooltip.id="tooltip";
-    const h2 = document.createElement("h2");
-    h2.textContent="Click me!"
-    tooltip.appendChild(h2);
     image.src = "http://www.pngall.com/wp-content/uploads/2016/07/Birthday-Present-PNG-Pic.png"
     image.addEventListener('click', () => {
         console.log("Click!");

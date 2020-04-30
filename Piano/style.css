@@ -1,0 +1,19 @@
+body{
+    background-color: #242424;
+    color: white;
+    height: 98vh;
+    width: 98vw;
+    font-family: 'PT Sans', sans-serif;
+}
+.app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:100%;
+    width: 100%;
+}
+audio
+{
+    display: none;
+}

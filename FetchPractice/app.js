@@ -14,19 +14,20 @@ const createDiv =(elem1,elem2)=>{
       app.appendChild(post);
 }
 const app = document.querySelector(".app");
-fetch('https://jsonplaceholder.typicode.com/users')
+fetch('http://localhost:3000/posts')
   .then(response => response.json())
   .then(json => {
     json.map((element)=>{
-      createDiv(element.name,element.username);
+      createDiv(element.user,element.title);
     })
   })
 button.addEventListener('click',()=>{
-  fetch('https://jsonplaceholder.typicode.com/users', {
+  fetch('http://localhost:3000/posts', {
     method: 'POST',
     body: JSON.stringify({
-      title: name.value,
-      body: nickname.value,
+      user: name.value,
+      title: nickname.value,
+      post: '',
       userId: 1
     }),
     headers: {
@@ -40,4 +41,3 @@ button.addEventListener('click',()=>{
 })
 
  
-  //zrob teraz tak jak on i drukuj zawartosc i dodawaj za pomoca formularza
