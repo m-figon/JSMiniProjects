@@ -1,6 +1,5 @@
 body{
-    background-color: #242424;
-    color: white;
+    background-color: #e4e4e4;
     height: 98vh;
     width: 98vw;
     font-family: 'PT Sans', sans-serif;
@@ -16,4 +15,31 @@ body{
 audio
 {
     display: none;
+}
+.button-lists{
+    margin-top:5vh;
+    display: flex;
+}
+#black-button{
+    background-color: black;
+    color: black;
+    width: 2vw;
+    height:10vh;
+}
+#white-button{
+    background-color: white;
+    color: black;
+    width: 2vw;
+    height:10vh;
+}
+#white-button:hover,
+#black-button:hover{
+    cursor: pointer;
+}
+#white-button:hover{
+    border: 2px solid black;
+}
+#black-button:hover{
+    background-color: rgb(95, 95, 95);
+    color: rgb(95, 95, 95);
 }
