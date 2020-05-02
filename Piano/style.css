@@ -19,16 +19,30 @@ audio {
     margin-top: 5vh;
     display: flex;
 }
+@media only screen and (max-width: 1350px){
+    #black-button,
+    #white-button
+    {
+        font-size: 0.5rem;
+    }
+}
+@media only screen and (max-width: 1000px){
+    #black-button,
+    #white-button
+    {
+        width: 3vw;
+    }
+}
 #black-button {
     background-color: black;
-    color: black;
-    width: 2.3vw;
+    color: white;
+    width: 2.5vw;
     height: 15vh;
 }
 #white-button {
     background-color: white;
     color: black;
-    width: 2.3vw;
+    width: 2.5vw;
     height: 15vh;
 }
 #white-button:hover,
