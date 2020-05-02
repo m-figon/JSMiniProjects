@@ -1,45 +1,75 @@
-body{
+body {
     background-color: #e4e4e4;
     height: 98vh;
     width: 98vw;
-    font-family: 'PT Sans', sans-serif;
+    font-family: "PT Sans", sans-serif;
 }
-.app{
+.app {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height:100%;
+    height: 100%;
     width: 100%;
 }
-audio
-{
+audio {
     display: none;
 }
-.button-lists{
-    margin-top:5vh;
+.button-lists {
+    margin-top: 5vh;
     display: flex;
 }
-#black-button{
+#black-button {
     background-color: black;
     color: black;
-    width: 2vw;
-    height:10vh;
+    width: 2.3vw;
+    height: 15vh;
 }
-#white-button{
+#white-button {
     background-color: white;
     color: black;
-    width: 2vw;
-    height:10vh;
+    width: 2.3vw;
+    height: 15vh;
 }
 #white-button:hover,
-#black-button:hover{
+#black-button:hover {
     cursor: pointer;
 }
-#white-button:hover{
+#white-button:hover {
     border: 2px solid black;
 }
-#black-button:hover{
+#black-button:hover {
     background-color: rgb(95, 95, 95);
     color: rgb(95, 95, 95);
+}
+input[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+    margin-right: 0.5vw;
+}
+input[type=checkbox]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    border: 2px solid #555555;
+    border-radius: 3px;
+    background-color: white;
+}
+input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid #555555;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
 }
