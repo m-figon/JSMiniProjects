@@ -1,0 +1,18 @@
+body {
+    background-color: #e4e4e4;
+    height: 98vh;
+    width: 98vw;
+    font-family: "PT Sans", sans-serif;
+}
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.myChart{
+    width:100vw;
+    height:100vh;
+}
