@@ -1,8 +1,8 @@
 body{
-    background-color: #afafaf;
-    font-family: 'PT Sans', sans-serif;
-    color: green;
-    
+    background-color: #5b6467;
+    background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+    font-family: 'Lato', sans-serif;
+    color: #1dcebe;    
 }
 .bottom,
 .left,
@@ -42,9 +42,10 @@ body{
 .field{
     width:80%;
     height:80%;
-    background-color: white;
+    background-color: rgba(255, 255, 255,0.9);
     border-radius: 10px;
-    border: 5px solid black
+    border: 2px solid#1dcebe;    
+
 }
 
 img{
@@ -67,6 +68,8 @@ img{
 }
 h1{
     font-size: 6rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
 }
 .bottom > .field > img:hover{
     cursor: pointer;

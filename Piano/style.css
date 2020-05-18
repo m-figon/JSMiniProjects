@@ -2,8 +2,7 @@ body {
     background-color: #e4e4e4;
     height: 98vh;
     width: 98vw;
-    font-family: "PT Sans", sans-serif;
-}
+    font-family: 'Lato', sans-serif;}
 .app {
     display: flex;
     justify-content: center;
