@@ -61,8 +61,7 @@ const main = (arrayValue) => {
 }
 //init values
 
-
-fetch('http://localhost:3000/data')
+fetch('https://my-json-server.typicode.com/m-figon/demo/users')
   .then((response) => {
     return response.json();
   })

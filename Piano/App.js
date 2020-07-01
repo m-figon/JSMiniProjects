@@ -41,7 +41,7 @@ const octaveInit = (octave, txtOctave, audioList, buttonsList) => {
   // copying c3-audio
   for (let i = 0; i < 12; i++) {
     let tmp = audioList.children[i].cloneNode(true);
-    tmp.firstElementChild.src = "C:/Muzyczka/Notes/" + txtOctave[i + 1] + ".mp3";
+    tmp.firstElementChild.src = "./Notes/" + txtOctave[i + 1] + ".mp3";
     audioList.appendChild(tmp);
   }
   //
