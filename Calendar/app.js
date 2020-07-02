@@ -12,7 +12,8 @@ var Calendar = /** @class */ (function () {
     Calendar.prototype.monthInit = function () {
         for (var i = 0; i < 12; i++) {
             var option = document.createElement('option');
-            option.value = this.months[i];
+            option.value = i;
+            console.log(option.value);
             option.innerHTML = this.months[i];
             this.select[1].appendChild(option);
         }
@@ -28,9 +29,11 @@ var Calendar = /** @class */ (function () {
     Calendar.prototype.selectChange = function () {
         console.log(this.select[1].value);
         for (var i = 0; i < this.months.length; i++) {
-            if (this.months[i] === this.select[1].value) {
+            if (i === parseInt(this.select[1].value)) {
+                console.log('select match!');
                 this.num = i;
                 this.lastDays = this.monthsDays[this.num];
+                console.log(this.lastDays);
                 return this.lastDays;
             }
         }
@@ -47,8 +50,25 @@ var Calendar = /** @class */ (function () {
         console.log(this.items);
         var _loop_1 = function (i) {
             this_1.items[i].addEventListener("click", function () {
-                var tmp;
-                tmp = _this.items[i].childNodes[0].nodeValue + "/" + _this.select[1].value + "/" + _this.select[0].value;
+                for (var i_1 = 7; i_1 < _this.items.length; i_1++) {
+                    _this.items[i_1].id = "";
+                }
+                var tmp = "";
+                _this.items[i].id = "selected";
+                console.log(_this.items[i]);
+                if (parseInt(_this.items[i].childNodes[0].nodeValue) < 10) {
+                    tmp += "0" + _this.items[i].childNodes[0].nodeValue;
+                }
+                else {
+                    tmp += _this.items[i].childNodes[0].nodeValue;
+                }
+                if (parseInt(_this.select[1].value) < 10) {
+                    tmp += "/0" + (parseInt(_this.select[1].value) + 1);
+                }
+                else {
+                    tmp += "/" + (parseInt(_this.select[1].value) + 1);
+                }
+                tmp += "/" + _this.select[0].value;
                 var text = document.querySelector('.date h1');
                 console.log(text);
                 text.innerHTML = "Chosen date is: " + tmp;
@@ -56,7 +76,7 @@ var Calendar = /** @class */ (function () {
             });
         };
         var this_1 = this;
-        for (var i = 7; i <= this.items.length; i++) {
+        for (var i = 7; i < this.items.length; i++) {
             _loop_1(i);
         }
     };
@@ -72,7 +92,15 @@ calendarObj.select[1].addEventListener("change", function () {
         calendarObj.calendar.removeChild(calendarObj.calendar.lastChild);
     }
     calendarObj.calendarInit();
+    var text = document.querySelector('.date h1');
+    text.innerHTML = "";
 });
-calendarObj.calendar.addEventListener("click", function (item) {
-    console.log(item);
+calendarObj.select[0].addEventListener("change", function () {
+    var days = calendarObj.selectChange();
+    for (var i = 1; i <= days; i++) {
+        calendarObj.calendar.removeChild(calendarObj.calendar.lastChild);
+    }
+    calendarObj.calendarInit();
+    var text = document.querySelector('.date h1');
+    text.innerHTML = "";
 });
