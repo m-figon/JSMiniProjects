@@ -1,0 +1,7 @@
+New Game
+Thu Jul 09 2020 17:49:04 GMT+0200 (GMT+02:00)/sign:X/noWinner/round:1
+Thu Jul 09 2020 17:49:05 GMT+0200 (GMT+02:00)/sign:O/noWinner/round:2
+Thu Jul 09 2020 17:49:11 GMT+0200 (GMT+02:00)/sign:X/noWinner/round:3
+Thu Jul 09 2020 17:49:13 GMT+0200 (GMT+02:00)/sign:O/noWinner/round:4
+Thu Jul 09 2020 17:49:15 GMT+0200 (GMT+02:00)/XWon/round:5
+End of Game
