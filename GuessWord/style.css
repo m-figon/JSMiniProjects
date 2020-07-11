@@ -1,0 +1,63 @@
+body {
+    background-color: #2085a7;
+    font-family: "PT Sans", sans-serif;
+    color: black;
+}
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 5rem;
+}
+.score{
+    display: flex;
+}
+.score div{
+    background-color: aliceblue;
+    width:3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:3rem;
+    font-size: 1.5rem;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.letters{
+    margin-top: 5rem;
+    display: flex;
+}
+.letter{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    background-color: rgb(160, 166, 170);
+    width:3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:3rem;
+    border: 1.5px solid black;
+    border-radius: 5px;
+}
+.letter:hover{
+    background-color: rgb(116, 121, 124);
+    cursor: pointer;
+}
+.letter h1{
+    font-size: 1.5rem;
+    color:white;
+}
+.board{
+    display: flex;
+}
+.board h1{
+    font-size: 3rem;
+    color: white;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
