@@ -8,14 +8,14 @@ $(".app h1:lt(1)").css({ 'color': "#edd051" });
 $(".app h1:gt(1)").css({ 'color': "#383838" });
 $(".app h1[id=green]").css({ 'color': "#21c259" });
 $(".app input[type=text]").css({
-    "padding-left":"10px",
+    "padding-left": "10px",
     'width': "25rem",
     "height": "2rem",
     "border-radius": "5px",
     "border": "2px solid black"
 });
 $(".one-line button").css({
-    "margin-left":"5px",
+    "margin-left": "5px",
     'width': "3rem",
     "height": "2.5rem",
     "border-radius": "5px",
@@ -30,25 +30,28 @@ $(".one-line button img").css({
 });
 // CSS
 //input focus and blur
-$(".app input[type=text]").on('focus',(e)=>{
-    if(e.target.value==="New item...")
-    e.target.value="";
+$(".app input[type=text]").on('focus', (e) => {
+    if (e.target.value === "New item...")
+        e.target.value = "";
 })
-$(".app input[type=text]").on('blur',(e)=>{
-    if(e.target.value==="")
-    e.target.value="New item...";
+$(".app input[type=text]").on('blur', (e) => {
+    if (e.target.value === "")
+        e.target.value = "New item...";
 })
 //input focus and blur
-$(".one-line button").on('click',()=>{
-    $(".items").append('<div></div>'); 
-    $(".items div").addClass('item');
-    $(".item").prepend('<div></div>');
-    $(".item div").addClass('left');
-    $(".item").append('<div></div>');
-    $(".item div:gt(0)").addClass('right');
-    $(".item .left").append("<h1></h1>");
-    let text=$(".app input[type=text]")[0].value;
-    $(".item .left h1").append(text);
-    $(".app input[type=text]")[0].value="New item...";
-    $(".item .right").append('<h1>X</h1>');
+//add item button
+$(".one-line button").on('click', () => {
+    let text = $(".app input[type=text]")[0].value;
+    if (text !== "New item..." && text !== "" && text !== " ") {
+        $(".items").append("<div class='item'></div>");
+        $(".items:last-child .item:last-child").prepend("<div class='left'></div>");
+        $(".item:last-child .left").append("<h1>" + text + "</h1>");
+        $(".items:last-child .item:last-child").append("<div class='right'></div>");
+        $(".item:last-child .right").append('<h1>X</h1>');
+        $(".right h1").on('click', (e) => {
+            let item = e.target.closest('.item');
+            $(item).remove();
+        });
+    }
 });
+//add item button
