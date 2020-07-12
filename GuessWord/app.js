@@ -1,9 +1,12 @@
-const words = ['apple', 'sandwich', 'bottle', 'lattern', 'bookshelf', 'milkshake', 'fabulous', 'computer'];
-let number = Math.floor((Math.random() * 8));
+const words = ['sandwich', 'fabulous', 'computer'];
+let number = Math.floor((Math.random() * 3));
 console.log(words[number]);
 let letters = [];
 let guessingLetters = [];
-let word = words[number]
+let word = words[number];
+let win=false;
+let loss=false;
+let wrong=0;
 function shuffelWord(word) {
     let shuffledWord = '';
     word = word.split('');
@@ -12,17 +15,49 @@ function shuffelWord(word) {
     }
     return shuffledWord;
 }
-letters=shuffelWord(words[number]).split('');
+letters = (words[number]).split('');
 $(".score div:first-child").text('0');
 $(".score div:last-child").text('10');
-for(let item of letters){
+for (let item of letters) {
     $(".board").append("<h1>_</h1>");
 }
-for(let item of shuffelWord(words[number]+"abcdefghtyjk").split('')){
-    $(".letters").append("<div class='letter'></div>");
-    $(".letter:last-child").append("<h1>"+item+"</h1>");
+for (let item of shuffelWord(words[number] + "abcdefghtyjk").split('')) {
+    $(".letters").append("<button class='letter'>" + item + "</button>");
 }
-//now clicking deletes div letter and changes _ to this letter
-//if wrong 0//10 increases
-//if won show winning display
-//if loss show loss display
+$(".letter").on('click', (e) => {
+    console.log(e.target.innerText);
+    let search=false;
+    for (let i = 0; i < letters.length; i++) {
+        console.log(letters[i]);
+        if (e.target.innerText === letters[i]) {
+            search=true;
+            console.log(i);
+            $(".board h1:eq(" + i + ")").html(e.target.innerText);
+            e.target.remove();
+            let emptyLetters;
+            for (let item of letters) {
+                if(!$(".board h1").text().includes('_')){
+                    console.log('you won');
+                    win=true;
+                }
+            }
+        }
+    }
+    if(!search){
+        wrong++;
+        $(".score div:first-child").text(wrong);
+        if(wrong>=10){
+            loss=true;
+        }
+    }
+    if(win && !loss){
+        console.log('win board');
+        $(".app div").remove();
+        $(".app").append("<h2 id='green'>YOU WON</h2>");
+    }
+    if(loss && !win){
+        console.log('loss board');
+        $(".app div").remove();
+        $(".app").append("<h2 id='red'>YOU LOSE</h2>");
+    }
+})

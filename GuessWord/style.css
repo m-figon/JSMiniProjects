@@ -48,7 +48,7 @@ body {
     background-color: rgb(116, 121, 124);
     cursor: pointer;
 }
-.letter h1{
+.letter{
     font-size: 1.5rem;
     color:white;
 }
@@ -60,4 +60,13 @@ body {
     color: white;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+}
+.app h2{
+    font-size: 3rem;
+}
+#green{
+    color:rgb(70, 184, 70);
+}
+#red{
+    color:rgb(197, 50, 50);
 }
