@@ -16,10 +16,10 @@ const MINUTE = SECOND * 60;
 const HOUR = MINUTE * 60;
 const DAY = HOUR * 24;
 
-var currentDate = new Date();
-var birthdayDate = new Date();
-var days, hours, minutes, seconds;
-var tmpDays, tmpHours, tmpMinutes, tmpSeconds, started;
+let currentDate = new Date();
+let birthdayDate = new Date();
+let days, hours, minutes, seconds;
+let tmpDays, tmpHours, tmpMinutes, tmpSeconds, started;
 
 const displaySurprise = () => {
 
@@ -46,7 +46,7 @@ const checkAndPrintTime = () => {
     function displayNumber(value, type) {
         (value < 10 && value >= 0) ? type.textContent = "0" + value : type.textContent = value;
     }
-    var currentDate = new Date();
+    let currentDate = new Date();
     if (birthdayDate.getTime() - currentDate.getTime() >= 0) {
         if (started) {
             days = Math.floor((birthdayDate.getTime() - currentDate.getTime()) / (DAY));
