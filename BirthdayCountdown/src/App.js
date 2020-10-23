@@ -42,10 +42,11 @@ function makeAnimation(condition1, condition2, value) {
         value.appendChild(childElem);
     }
 }
-const checkAndPrintTime = () => {
+const checkAndPrintTime = (newDate) => {
     function displayNumber(value, type) {
         (value < 10 && value >= 0) ? type.textContent = "0" + value : type.textContent = value;
     }
+    birthdayDate = new Date(newDate);
     let currentDate = new Date();
     if (birthdayDate.getTime() - currentDate.getTime() >= 0) {
         if (started) {
@@ -67,6 +68,7 @@ const checkAndPrintTime = () => {
             displayNumber(hours, hoursNumber.firstElementChild);
             displayNumber(minutes, minutesNumber.firstElementChild);
             displayNumber(seconds, secondsNumber.firstElementChild);
+            return (days+hours+minutes+seconds);
         }
 
     } else {
@@ -77,20 +79,19 @@ const checkAndPrintTime = () => {
             } catch (e) { }
 
         }
-
+        return ("0")
     }
 }
 app.removeChild(timer);
 title.firstElementChild.innerText = "Please enter date e.g.'April 29, 2020 00:00:00'";
 button.addEventListener("click", () => {
-    birthdayDate = new Date(input.value);
     title.firstElementChild.innerText = "Birthday Timer";
     app.appendChild(timer);
     input.style.display = "none";
     button.style.display = "none";
     started = true;
     secondsNumber.firstElementChild.style.animation = "mymove 0.5s steps(50)";
-    checkAndPrintTime();
+    checkAndPrintTime(input.value);
 })
 
 setInterval(checkAndPrintTime, 1000)
