@@ -30,8 +30,6 @@ const playersInit = () =>{
             }
         }
     }
-    console.log(board);
-
 }
 const printBoard = () =>{
     for(let i=0; i<SIZE+1; i++){
@@ -43,6 +41,7 @@ const printBoard = () =>{
 }
 const makeMove = (x,y,player) =>{
     if(player!=='B' && player!=='W'){
+        console.log('1');
         return false;
     }
     let letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
@@ -52,16 +51,38 @@ const makeMove = (x,y,player) =>{
             xIndex=i;
         }
     }
-    if(xIndex && Number.isInteger(y)){
-        board[y][xIndex+1]=player;
-        printBoard();
-        return true;
+    if(xIndex!==undefined && Number.isInteger(y)){
+        let possible = checkIfPossible(y, xIndex+1,player);
+        if(possible){
+            board[y][xIndex+1]=player;
+            console.log('possible');
+            printBoard();
+            return true;
+        }
+        else{
+            console.log('not possible');
+            return false;
+        }
     }else{
         return false;
     }
 }
+const checkIfPossible = (y,x,player) =>{
+    if((board[y+1][x+1]==='W' && player==='W') || (board[y+1][x-1]==='W' && player==='W') || (board[y-1][x+1]==='B' && player==='B') || (board[y-1][x-1]==='B' && player==='B')){
+        return true
+    }
+    else{
+        return false
+    }
+}
 boardInit();
-//playersInit();
-printBoard();
-console.log(makeMove('C',5,'B'));
+playersInit();
+
+exports.boardInit = boardInit;
+exports.playersInit = playersInit;
+exports.printBoard = printBoard;
+exports.makeMove = makeMove;
+exports.checkIfPossible = checkIfPossible;
+
+
 
