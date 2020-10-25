@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.game{
+    margin:0;
+    padding:0;
+    width:100vw;
+    height:100vh;
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.board{
+    flex-direction: column;
+    width:80%;
+}
+.row{
+    display: flex;
+    width: 80%;
+    height: 10%;
+}
+.black-part{
+    background-color: rgb(56, 56, 56);
+}
+.white-part{
+    background-color: rgb(243, 242, 242);
+}
+.empty-part,
+.white-part,
+.black-part{
+    color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+}
+.white-part > button,
+.black-part > button {
+    border-radius: 50%;
+    width:80%;
+    height:80%;
+    border-radius: 50%;
+}
+.white-button{
+    background-color: white;
+    border: 1px solid black;
+}
+.black-button {
+    background-color: black;
+    border: 1px solid white;
+}
