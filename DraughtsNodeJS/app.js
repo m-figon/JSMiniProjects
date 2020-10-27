@@ -11,7 +11,7 @@ const boardInit = () => {
 }
 const playersInit = () => {
     for (let i = 1; i < SIZE / 2; i++) {
-        for (let j = 2; j < SIZE + 1; j++) {
+        for (let j = 1; j < SIZE + 1; j++) {
             if ((j % 2 == 0 && i % 2 == 1) || (j % 2 == 1 && i % 2 == 0)) {
                 board[i][j] = 'B';
             }
