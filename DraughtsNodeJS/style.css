@@ -11,18 +11,17 @@ body{
     width:100vw;
     height:100vh;
     background-color: rgb(230, 230, 230);
+    background: url('background.jpg');
+    background-size: 100% 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .board{
     flex-direction: column;
-    width:80%;
 }
 .row{
     display: flex;
-    width: 80%;
-    height: 10%;
 }
 .black-part{
     background-color: rgb(56, 56, 56);
@@ -30,27 +29,56 @@ body{
 .white-part{
     background-color: rgb(243, 242, 242);
 }
+.empty-part-horizontal,
+.empty-part-vertical,
 .empty-part,
 .white-part,
 .black-part{
-    color: brown;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20rem;
+    width: 5rem;
+    height: 5rem;
+}
+h1{
+    font-size: 1rem;
+}
+.empty-part-horizontal{
+    background-color:black;
+    height: 1.5rem;
+    width: 5rem;
+}
+.empty-part{
+    background-color:black;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.empty-part-vertical{
+    background-color: black;
+    width: 1.5rem;
+    height: 5rem;
 }
 .white-part > button,
 .black-part > button {
     border-radius: 50%;
-    width:80%;
-    height:80%;
-    border-radius: 50%;
+    width:4rem;
+    height:4rem;
+    
 }
 .white-button{
     background-color: white;
-    border: 1px solid black;
+    border: 0;
+    -webkit-box-shadow: 1px 1px 0px 2px rgba(146, 146, 146, 0.7);
+box-shadow: 1px 1px 0px 2px  rgba(146, 146, 146, 0.7);
 }
 .black-button {
     background-color: black;
-    border: 1px solid white;
+    -webkit-box-shadow: 1px 1px 0px 2px rgba(146, 146, 146, 0.7);
+box-shadow: 1px 1px 0px 2px rgba(146, 146, 146, 0.7);
+    border: 0;
 }
+@keyframes bgChange {
+    0%   {background-color:  rgb(56, 56, 56);}
+    100%   {background-color: #009933;}
+  }

@@ -75,11 +75,12 @@ window.addEventListener('DOMContentLoaded', () => {
 const dragoverHandler = (e) => {
   e.preventDefault();
   if (e.target.children.length === 0 && e.target.className === 'black-part') {
-    e.target.style.backgroundColor = "green";
+    e.target.style.animation = "bgChange 1s infinite";
   }
 }
 const dropHandler = (e, color) => {
   e.preventDefault();
+  e.target.style.animation = "bgChange 0s";
   if (e.target.children.length === 0 && e.target.className === 'black-part') {
     if (e.dataTransfer.getData("content") === 'black-button') {
       dragObject.style.backgroundColor = "black";
@@ -156,7 +157,7 @@ const dropHandler = (e, color) => {
 }
 const dragleaveHandler = (e, color) => {
   if (e.target.className === 'black-part') {
-    e.target.style.backgroundColor = color;
+    e.target.style.animation = "bgChange 0s";
   }
 }
 readBoardState();
