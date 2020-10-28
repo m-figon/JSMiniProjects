@@ -1,12 +1,13 @@
 let dragObject;
 let whiteAreas = document.querySelectorAll('.white-part');
 let blackAreas = document.querySelectorAll('.black-part');
-let board = [[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']];
+let board = [[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '], [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']];
 const SIZE = 8;
 let prevY;
 let prevX;
 let currentY;
 let currentX;
+let currentTarget;
 const printBoard = () => {
   console.log(board);
 }
@@ -38,6 +39,7 @@ const readBoardState = () => {
 //console.log(whiteAreas[0]);
 const dragstartHandler = (e) => {
   e.dataTransfer.setData("content", e.target.className);
+  currentTarget= e.target.className;
   dragObject = e.target;
   let rows = document.querySelectorAll('.row');
   for (let i = 0; i < rows.length; i++) {
@@ -49,6 +51,7 @@ const dragstartHandler = (e) => {
           if (rows[i].children[j].firstElementChild === e.target) {
             prevY = i;
             prevX = j;
+            console.log(prevY + " " + prevX);
           }
         }
       } else {
@@ -74,8 +77,38 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 const dragoverHandler = (e) => {
   e.preventDefault();
+  console.log(currentTarget);
   if (e.target.children.length === 0 && e.target.className === 'black-part') {
-    e.target.style.animation = "bgChange 1s infinite";
+    let rows = document.querySelectorAll('.row');
+    for (let i = 0; i < rows.length; i++) {
+      //console.log(rows[i].children);
+      for (let j = 0; j < rows[i].children.length; j++) {
+        //console.log(rows[i].children[j].firstElementChild.className);
+        if (rows[i].children[j] === e.target) {
+          currentY = i;
+          currentX = j;
+          console.log(currentY + " " + currentX);
+          if (currentY - prevY === 1 && currentX - prevX === 1 && currentTarget === 'white-button') {
+            e.target.style.animation = "bgChange 1s infinite";
+          } else if (currentY - prevY === 1 && currentX - prevX === -1 && currentTarget === 'white-button') {
+            e.target.style.animation = "bgChange 1s infinite";
+          }
+          else if (currentY - prevY === 2 && currentX - prevX === 2 && currentTarget === 'white-button' && board[currentY-1][currentX-1]==='B') {
+            e.target.style.animation = "bgChange 1s infinite";
+          } else if (currentY - prevY === 2 && currentX - prevX === -2 && currentTarget === 'white-button' && board[currentY-1][currentX+1]==='B') {
+            e.target.style.animation = "bgChange 1s infinite";
+          } else if (prevY - currentY === 1 && prevX - currentX === 1 && currentTarget === 'black-button' ) {
+            e.target.style.animation = "bgChange 1s infinite";
+          } else if (prevY - currentY === 1 && prevX - currentX === -1 && currentTarget === 'black-button') {
+            e.target.style.animation = "bgChange 1s infinite";
+          } else if (prevY - currentY === 2 && prevX - currentX === 2 && currentTarget === 'black-button' && board[prevY-1][prevX-1]==='W') {
+            e.target.style.animation = "bgChange 1s infinite";
+          } else if (prevY - currentY === 2 && prevX - currentX === -2 && currentTarget === 'black-button' && board[prevY-1][prevX+1]==='W') {
+            e.target.style.animation = "bgChange 1s infinite";
+          }
+        }
+      }
+    }
   }
 }
 const dropHandler = (e, color) => {
@@ -84,73 +117,145 @@ const dropHandler = (e, color) => {
   if (e.target.children.length === 0 && e.target.className === 'black-part') {
     if (e.dataTransfer.getData("content") === 'black-button') {
       dragObject.style.backgroundColor = "black";
-      e.target.appendChild(dragObject);
-      console.log(e.target.firstElementChild);
-      e.target.style.backgroundColor = color;
-      board[prevY][prevX] = ' ';
       let rows = document.querySelectorAll('.row');
-      readBoardState();
       for (let i = 0; i < rows.length; i++) {
         //console.log(rows[i].children);
         for (let j = 0; j < rows[i].children.length; j++) {
-          if (rows[i].children[j].firstElementChild) {
-            if (rows[i].children[j].firstElementChild.tagName === 'BUTTON') {
-              //console.log(rows[i].children[j].firstElementChild.className);
-              if (rows[i].children[j].firstElementChild === e.target.firstElementChild) {
-                currentY = i;
-                currentX = j;
-                if(currentY-prevY===2 && currentX-prevX===2){
-                  console.log((currentY-1)+" "+(currentX-1));
-                  board[currentY-1][currentX-1]=' ';
-                  rows[currentY-1].children[currentX-1].removeChild(rows[currentY-1].children[currentX-1].firstElementChild)
-                }else if(prevY-currentY===2 && prevX-currentX===2){
-                  console.log((prevY-1)+" "+(prevX-1));
-                  board[prevY-1][prevX-1]=' ';
-                  rows[prevY-1].children[prevX-1].removeChild(rows[prevY-1].children[prevX-1].firstElementChild)
-                }
-              }
+          //console.log(rows[i].children[j].firstElementChild.className);
+          if (rows[i].children[j] === e.target) {
+            currentY = i;
+            currentX = j;
+            console.log(currentY + " " + currentX);
+            if (prevY - currentY === 1 && prevX - currentX === 1) {
+              e.target.appendChild(dragObject);
+              console.log(e.target.firstElementChild);
+              e.target.style.backgroundColor = color;
+              board[prevY][prevX] = ' ';
+              readBoardState();
+            } else if (prevY - currentY === 1 && prevX - currentX === -1) {
+              e.target.appendChild(dragObject);
+              console.log(e.target.firstElementChild);
+              e.target.style.backgroundColor = color;
+              board[prevY][prevX] = ' ';
+              readBoardState();
+            } else if (prevY - currentY === 2 && prevX - currentX === 2 && board[prevY-1][prevX-1]==='W') {
+              e.target.appendChild(dragObject);
+              console.log(e.target.firstElementChild);
+              e.target.style.backgroundColor = color;
+              board[prevY][prevX] = ' ';
+              board[prevY-1][prevX-1]===' '
+              rows[prevY-1].children[prevX-1].removeChild(rows[prevY-1].children[prevX-1].firstElementChild)
+              readBoardState();
+            } else if (prevY - currentY === 2 && prevX - currentX === -2 && board[prevY-1][prevX+1]==='W') {
+              e.target.appendChild(dragObject);
+              console.log(e.target.firstElementChild);
+              e.target.style.backgroundColor = color;
+              board[prevY][prevX] = ' ';
+              board[prevY-1][prevX+1]===' '
+              rows[prevY-1].children[prevX+1].removeChild(rows[prevY-1].children[prevX+1].firstElementChild)
+              readBoardState();
             }
-          } else {
-            //console.log(rows[i].children[j].firstElementChild)
           }
         }
       }
-      console.log(prevY+" "+prevX+"/"+currentY+" "+currentX);
+
+      // for (let i = 0; i < rows.length; i++) {
+      //   //console.log(rows[i].children);
+      //   for (let j = 0; j < rows[i].children.length; j++) {
+      //     if (rows[i].children[j].firstElementChild) {
+      //       if (rows[i].children[j].firstElementChild.tagName === 'BUTTON') {
+      //         //console.log(rows[i].children[j].firstElementChild.className);
+      //         if (rows[i].children[j].firstElementChild === e.target.firstElementChild) {
+      //           currentY = i;
+      //           currentX = j;
+      //           if (currentY - prevY === 2 && currentX - prevX === 2) {
+      //             console.log((currentY - 1) + " " + (currentX - 1));
+      //             board[currentY - 1][currentX - 1] = ' ';
+      //             rows[currentY - 1].children[currentX - 1].removeChild(rows[currentY - 1].children[currentX - 1].firstElementChild)
+      //           } else if (prevY - currentY === 2 && prevX - currentX === 2) {
+      //             console.log((prevY - 1) + " " + (prevX - 1));
+      //             board[prevY - 1][prevX - 1] = ' ';
+      //             rows[prevY - 1].children[prevX - 1].removeChild(rows[prevY - 1].children[prevX - 1].firstElementChild)
+      //           }
+      //         }
+      //       }
+      //     } else {
+      //       //console.log(rows[i].children[j].firstElementChild)
+      //     }
+      //   }
+      // }
+      console.log(prevY + " " + prevX + "/" + currentY + " " + currentX);
       printBoard();
     } else if (e.dataTransfer.getData("content") === 'white-button') {
       dragObject.style.backgroundColor = "white";
-      e.target.appendChild(dragObject);
-      console.log(e.target.firstElementChild);
-      e.target.style.backgroundColor = color;
-      board[prevY][prevX] = ' ';
       let rows = document.querySelectorAll('.row');
-      readBoardState();
       for (let i = 0; i < rows.length; i++) {
         //console.log(rows[i].children);
         for (let j = 0; j < rows[i].children.length; j++) {
-          if (rows[i].children[j].firstElementChild) {
-            if (rows[i].children[j].firstElementChild.tagName === 'BUTTON') {
-              //console.log(rows[i].children[j].firstElementChild.className);
-              if (rows[i].children[j].firstElementChild === e.target.firstElementChild) {
-                currentY = i;
-                currentX = j;
-                if(currentY-prevY===2 && currentX-prevX===2){
-                  console.log((currentY-1)+" "+(currentX-1));
-                  board[currentY-1][currentX-1]=' ';
-                  rows[currentY-1].children[currentX-1].removeChild(rows[currentY-1].children[currentX-1].firstElementChild)
-                }else if(prevY-currentY===2 && prevX-currentX===2){
-                  console.log((prevY-1)+" "+(prevX-1));
-                  board[prevY-1][prevX-1]=' ';
-                  rows[prevY-1].children[prevX-1].removeChild(rows[prevY-1].children[prevX-1].firstElementChild)
-                }
-              }
+          //console.log(rows[i].children[j].firstElementChild.className);
+          if (rows[i].children[j] === e.target) {
+            currentY = i;
+            currentX = j;
+            console.log(currentY + " " + currentX);
+            if (currentY - prevY === 1 && currentX - prevX === 1) {
+              e.target.appendChild(dragObject);
+              console.log(e.target.firstElementChild);
+              e.target.style.backgroundColor = color;
+              board[prevY][prevX] = ' ';
+              readBoardState();
+            } else if (currentY - prevY === 1 && currentX - prevX === -1) {
+              e.target.appendChild(dragObject);
+              console.log(e.target.firstElementChild);
+              e.target.style.backgroundColor = color;
+              board[prevY][prevX] = ' ';
+              readBoardState();
+            } else if (currentY - prevY === 2 && currentX - prevX === 2 && board && board[currentY-1][currentX-1]==='B') {
+              e.target.appendChild(dragObject);
+              console.log(e.target.firstElementChild);
+              e.target.style.backgroundColor = color;
+              board[prevY][prevX] = ' ';
+              board[currentY-1][currentX-1]===' ';
+              rows[currentY-1].children[currentX-1].removeChild(rows[currentY-1].children[currentX-1].firstElementChild)
+              readBoardState();
+            } else if (currentY - prevY === 2 && currentX - prevX === -2 && board && board[currentY-1][currentX+1]==='B') {
+              e.target.appendChild(dragObject);
+              console.log(e.target.firstElementChild);
+              e.target.style.backgroundColor = color;
+              board[prevY][prevX] = ' ';
+              board[currentY-1][currentX+1]===' ';
+              rows[currentY-1].children[currentX+1].removeChild(rows[currentY-1].children[currentX+1].firstElementChild)
+              readBoardState();
             }
-          } else {
-            //console.log(rows[i].children[j].firstElementChild)
           }
         }
       }
-      console.log(prevY+" "+prevX+"/"+currentY+" "+currentX);
+
+      // for (let i = 0; i < rows.length; i++) {
+      //   //console.log(rows[i].children);
+      //   for (let j = 0; j < rows[i].children.length; j++) {
+      //     if (rows[i].children[j].firstElementChild) {
+      //       if (rows[i].children[j].firstElementChild.tagName === 'BUTTON') {
+      //         //console.log(rows[i].children[j].firstElementChild.className);
+      //         if (rows[i].children[j].firstElementChild === e.target.firstElementChild) {
+      //           currentY = i;
+      //           currentX = j;
+      //           if(currentY-prevY===2 && currentX-prevX===2){
+      //             console.log((currentY-1)+" "+(currentX-1));
+      //             board[currentY-1][currentX-1]=' ';
+      //             rows[currentY-1].children[currentX-1].removeChild(rows[currentY-1].children[currentX-1].firstElementChild)
+      //           }else if(prevY-currentY===2 && prevX-currentX===2){
+      //             console.log((prevY-1)+" "+(prevX-1));
+      //             board[prevY-1][prevX-1]=' ';
+      //             rows[prevY-1].children[prevX-1].removeChild(rows[prevY-1].children[prevX-1].firstElementChild)
+      //           }
+      //         }
+      //       }
+      //     } else {
+      //       //console.log(rows[i].children[j].firstElementChild)
+      //     }
+      //   }
+      // }
+      console.log(prevY + " " + prevX + "/" + currentY + " " + currentX);
       printBoard();
     }
   }
