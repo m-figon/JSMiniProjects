@@ -1,0 +1,60 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.app{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.board{
+    width:20rem;
+}
+.clock{
+    border-radius: 50%;
+    width:20rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+.hour{
+    margin-top: 25%;
+    width:2px;
+    height:25%;
+    background-color: black;
+    transform-origin: 100% 100%;
+}
+.minute{
+    width:2px;
+    height:50%;
+    background-color: black;
+    transform-origin: 100% 100%;
+}
+.second{
+    width:2px;
+    height:50%;
+    background-color: red;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+.time{
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+h2{
+    margin:0;
+    padding:0;
+    font-size: 6rem;
+    letter-spacing: 2px;
+}
+h1{
+    margin:0;
+    padding:0;
+    font-size: 2rem;
+}
