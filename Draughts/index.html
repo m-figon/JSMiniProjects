@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Draughts</title>
+</head>
+
+<body>
+    <div class="game">
+        <div class="board">
+            <div class="row letters">
+                <div class="empty-part">
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>A</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>B</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>C</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>D</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>E</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>F</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>G</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>H</h1>
+                </div>
+                <div class="empty-part">
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="empty-part-vertical">
+                    <h1>1</h1>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="white-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="white-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="white-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="white-button"></button>
+                </div>
+                <div class="empty-part-vertical">
+                    <h1>1</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="empty-part-vertical">
+                    <h1>2</h1>
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="white-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="white-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="white-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="white-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="empty-part-vertical">
+                    <h1>2</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="empty-part-vertical">
+                    <h1>3</h1>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="white-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="white-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="white-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="white-button"></button>
+                </div>
+                <div class="empty-part-vertical">
+                    <h1>3</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="empty-part-vertical">
+                    <h1>4</h1>
+                </div>
+                <div class="black-part">
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="empty-part-vertical">
+                    <h1>4</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="empty-part-vertical">
+                    <h1>5</h1>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                </div>
+                <div class="empty-part-vertical">
+                    <h1>5</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="empty-part-vertical">
+                    <h1>6</h1>
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="black-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="black-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="black-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="black-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="empty-part-vertical">
+                    <h1>6</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="empty-part-vertical">
+                    <h1>7</h1>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="black-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="black-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="black-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="black-button"></button>
+                </div>
+                <div class="empty-part-vertical">
+                    <h1>7</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="empty-part-vertical">
+                    <h1>8</h1>
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="black-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="black-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="black-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="black-part">
+                    <button draggable="true" class="black-button"></button>
+                </div>
+                <div class="white-part">
+                </div>
+                <div class="empty-part-vertical">
+                    <h1>8</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="empty-part">
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>A</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>B</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>C</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>D</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>E</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>F</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>G</h1>
+                </div>
+                <div class="empty-part-horizontal">
+                    <h1>H</h1>
+                </div>
+                <div class="empty-part">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</body>
+<script src="./build/app.bundle.js"></script>
+
+</html>
