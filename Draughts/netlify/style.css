@@ -86,3 +86,96 @@ box-shadow: 1px 1px 0px 2px rgba(146, 146, 146, 0.7);
     0%   {background-color:  rgb(56, 56, 56);}
     100%   {background-color: #009933;}
   }
+  @media only screen and (max-width: 1500px) {
+    .empty-part-horizontal,
+    .empty-part-vertical,
+    .empty-part,
+    .white-part,
+    .black-part{
+        width: 4rem;
+        height: 4rem;
+    }
+    .empty-part-horizontal{
+        height: 1.2rem;
+        width: 4rem;
+    }
+    .empty-part{
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+    .empty-part-vertical{
+        width: 1.2rem;
+        height: 4rem;
+    }
+    .white-part > button,
+.black-part > button {
+    width:3rem;
+    height:3rem;
+}
+h1{
+    font-size: 0.8rem;
+}
+  }
+  @media only screen and (max-width: 1000px) {
+    .empty-part-horizontal,
+    .empty-part-vertical,
+    .empty-part,
+    .white-part,
+    .black-part{
+        width: 3rem;
+        height: 3rem;
+    }
+    .empty-part-horizontal{
+        height: 0.9rem;
+        width: 3rem;
+    }
+    .empty-part{
+        height: 0.9rem;
+        width: 0.9rem;
+    }
+    .empty-part-vertical{
+        width: 0.9rem;
+        height: 3rem;
+    }
+    .white-part > button,
+.black-part > button {
+    width:2rem;
+    height:2rem;
+}
+h2{
+    font-size: 1.5rem;
+}
+  }
+  @media only screen and (max-width: 600px) {
+    .empty-part-horizontal,
+    .empty-part-vertical,
+    .empty-part,
+    .white-part,
+    .black-part{
+        width: 2rem;
+        height: 2rem;
+    }
+    .empty-part-horizontal{
+        height: 0.6rem;
+        width: 2rem;
+    }
+    .empty-part{
+        height: 0.6rem;
+        width: 0.6rem;
+    }
+    .empty-part-vertical{
+        width: 0.6rem;
+        height: 2rem;
+    }
+    .white-part > button,
+.black-part > button {
+    width:1rem;
+    height:1rem;
+}
+h1{
+    font-size: 0.6rem;
+}
+h2{
+    font-size: 1.2rem;
+}
+  }

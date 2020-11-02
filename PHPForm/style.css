@@ -1,0 +1,76 @@
+body{
+    background-color: #d9d9d9;
+}
+.app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:55rem;
+    width: 100%;
+}
+.app-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ededed;
+    width:20rem;
+    height: 30rem;
+    border-radius: 10px;
+}
+input,
+select{
+    padding: 0.2rem 0.2rem;
+    border: #b3b3b3 solid 0.5px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.2rem;
+    color: #383838;
+    border-radius: 3px;
+}
+.correct{
+    border: #00ca33 solid 2px;
+}
+.incorrect{
+    border: #c70202 solid 2px;
+}
+h1{
+    display: block;
+    color: #383838;
+    font-size: 1.7rem;
+    font-family: 'PT Sans', sans-serif;
+    
+}
+button{
+    margin: 2rem 0;
+    background-color: #4a4a4a;
+    color:#cacaca;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+button:hover{
+    cursor: pointer;
+}
+#submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tooltip{
+    display: none;
+    position: relative;
+    top:-2rem;
+    left:15.5rem;
+    width: 10rem;
+    padding: 0.2rem 0.5rem;
+    background-color: #4a4a4a;
+    color:#cacaca;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 0.6rem;
+    border-radius: 5px;
+}
+#visible{
+    display: flex;
+}
