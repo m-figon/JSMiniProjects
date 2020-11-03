@@ -10,7 +10,7 @@ $passwordClass = "";
 
 
 $conn = mysqli_connect('localhost', 'admin', 'test1234', 'sql_users');
-$sql = "SELECT email, id FROM users ORDER BY id";
+$sql = "SELECT email, id , account FROM users ORDER BY id";
 $result = mysqli_query($conn, $sql);
 $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -80,9 +80,11 @@ if (isset($_GET['submit'])) {
 <body>
     <div class="app">
         <div class="data">
+        <h2>Users</h2>
             <?php foreach ($users as $user) { ?>
                 <h1>
-                    <?php echo $user['email']; ?>
+                    <?php echo $user['account']; ?>
+                    <a href="details.php?id=<?php echo $user['id'] ?>"> <button>Details</button></a>
                 </h1>
             <?php } ?>
         </div>
