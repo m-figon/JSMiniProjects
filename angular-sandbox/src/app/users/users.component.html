@@ -1,0 +1,7 @@
+<div class="users">
+        <input [(ngModel)]="filter">
+        <ng-container *ngFor="let user of users">
+         <li *ngIf="user.name.toLowerCase().includes(filter.toLowerCase())">{{user.name | uppercase }}</li>
+        </ng-container>
+
+</div>
